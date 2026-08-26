@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>REVORA MARKETING CORP. | Turn Marketing into Revenue</title>
+
+  <meta
+    name="description"
+    content="REVORA MARKETING CORP. helps businesses turn marketing into measurable revenue through strategy, advertising, content, and growth-focused marketing."
+  />
+
+  <style>
+    :root {
+      --navy: #061a33;
+      --blue: #1265ed;
+      --blue-dark: #0a4fbe;
+      --blue-light: #9fc5ff;
+      --text: #101820;
+      --muted: #5e6874;
+      --border: #e8edf3;
+      --soft-bg: #f7faff;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      height: 86px;
+
+      display: flex;
+      align-items: center;
+
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid rgba(6,26,51,0.07);
+
+      animation: headerIn 0.7s ease both;
+    }
+
+    @keyframes headerIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-container {
+      width: min(1180px, calc(100% - 64px));
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* =========================
+       BRAND
+    ========================== */
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 260px;
+    }
+
+    .brand-logo-wrap {
+      width: 64px;
+      height: 64px;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brand-logo-wrap img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      display: block;
+
+      transition: transform 0.3s ease;
+    }
+
+    .brand:hover img {
+      transform: scale(1.025);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 750;
+      letter-spacing: 0.19em;
+    }
+
+    .brand-corp {
+      margin-top: 6px;
+
+      color: #66717d;
+      font-size: 9px;
+      font-weight: 700;
+
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       NAV
+    ========================== */
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+
+      font-size: 14px;
+      font-weight: 520;
+    }
+
+    .desktop-nav a {
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--blue);
+    }
+
+    .desktop-nav a::after {
+      content: "";
+      position: absolute;
+
+      left: 50%;
+      bottom: -8px;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--blue);
+
+      transform: translateX(-50%);
+      transition: width 0.25s ease;
+    }
+
+    .desktop-nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid var(--blue);
+      border-radius: 6px;
+
+      color: var(--blue);
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue);
+      color: white !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta::after {
+      display: none;
+    }
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    .menu-button {
+      display: none;
+
+      background: transparent;
+      border: none;
+
+      color: var(--navy);
+      font-size: 28px;
+
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+
+      position: absolute;
+      top: 86px;
+      left: 0;
+
+      width: 100%;
+      padding: 26px 30px;
+
+      background: white;
+      border-bottom: 1px solid var(--border);
+
+      box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+
+      flex-direction: column;
+      gap: 22px;
+
+      font-size: 16px;
+      font-weight: 550;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+      animation: mobileIn 0.25s ease both;
+    }
+
+    @keyframes mobileIn {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: calc(100vh - 86px);
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(18,101,237,0.05),
+          transparent 28%
+        ),
+        white;
+    }
+
+    .hero-container {
+      width: min(1180px, calc(100% - 64px));
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 70px;
+
+      align-items: center;
+
+      padding: 85px 0 100px;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      position: relative;
+      z-index: 4;
+    }
+
+    .hero-copy > * {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 17px;
+
+      color: var(--blue);
+
+      font-size: 12px;
+      font-weight: 750;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      animation-delay: 0.12s !important;
+    }
+
+    .hero h1 {
+      color: var(--navy);
+
+      font-size: clamp(50px, 5.2vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+
+      font-weight: 780;
+
+      margin-bottom: 27px;
+
+      animation-delay: 0.23s !important;
+    }
+
+    .hero h1 .blue {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      max-width: 470px;
+
+      color: #46515c;
+
+      font-size: 18px;
+      line-height: 1.65;
+
+      margin-bottom: 32px;
+
+      animation-delay: 0.36s !important;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+
+      animation-delay: 0.48s !important;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .primary-button,
+    .secondary-button {
+      min-height: 51px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 25px;
+
+      border-radius: 6px;
+
+      font-size: 14px;
+      font-weight: 650;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .primary-button {
+      background: var(--blue);
+      color: white;
+
+      box-shadow: 0 10px 28px rgba(18,101,237,0.18);
+    }
+
+    .primary-button:hover {
+      background: var(--blue-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(18,101,237,0.25);
+    }
+
+    .secondary-button {
+      color: var(--navy);
+      border: 1px solid #d6deea;
+      background: white;
+    }
+
+    .secondary-button:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue-light);
+      box-shadow: 0 10px 25px rgba(6,26,51,0.06);
+    }
+
+    /* =========================
+       HERO CHART
+    ========================== */
+
+    .visual {
+      position: relative;
+      min-height: 500px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      opacity: 0;
+      transform: translateY(20px);
+
+      animation: visualIn 1s ease 0.38s forwards;
+    }
+
+    @keyframes visualIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chart {
+      width: 100%;
+      height: 480px;
+
+      position: relative;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      padding: 50px 15px 55px;
+
+      isolation: isolate;
+    }
+
+    .chart::before {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 320px;
+
+      right: 20px;
+      bottom: 25px;
+
+      background: radial-gradient(
+        circle,
+        rgba(18,101,237,0.11),
+        transparent 67%
+      );
+
+      filter: blur(3px);
+
+      animation: glowPulse 5s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.06);
+        opacity: 1;
+      }
+    }
+
+    .bars {
+      width: 74%;
+      height: 72%;
+
+      margin-left: auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 18px;
+
+      position: relative;
+      z-index: 1;
+
+      transform: translateY(13px);
+    }
+
+    .bar {
+      width: 12%;
+      min-width: 30px;
+
+      position: relative;
+
+      border-radius: 4px 4px 0 0;
+
+      transform-origin: bottom;
+      transform: scaleY(0);
+
+      background: linear-gradient(
+        180deg,
+        #347cf7 0%,
+        #7babfa 50%,
+        #d4e5ff 100%
+      );
+
+      box-shadow:
+        inset -4px 0 7px rgba(255,255,255,0.15),
+        0 7px 18px rgba(17,90,220,0.05);
+
+      animation: growBar 0.85s cubic-bezier(.22,.8,.26,1) forwards;
+    }
+
+    .bar:nth-child(1) {
+      height: 17%;
+      animation-delay: 0.5s;
+    }
+
+    .bar:nth-child(2) {
+      height: 28%;
+      animation-delay: 0.62s;
+    }
+
+    .bar:nth-child(3) {
+      height: 41%;
+      animation-delay: 0.74s;
+    }
+
+    .bar:nth-child(4) {
+      height: 55%;
+      animation-delay: 0.86s;
+    }
+
+    .bar:nth-child(5) {
+      height: 70%;
+      animation-delay: 0.98s;
+    }
+
+    .bar:nth-child(6) {
+      height: 90%;
+      animation-delay: 1.1s;
+    }
+
+    @keyframes growBar {
+      to {
+        transform: scaleY(1);
+      }
+    }
+
+    .curve {
+      position: absolute;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: visible;
+
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .curve-path {
+      fill: none;
+      stroke: url(#lineGradient);
+      stroke-width: 4.2;
+      stroke-linecap: round;
+
+      stroke-dasharray: 850;
+      stroke-dashoffset: 850;
+
+      animation: drawGrowth 1.9s ease 0.7s forwards;
+    }
+
+    @keyframes drawGrowth {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .chart-base {
+      position: absolute;
+
+      bottom: 52px;
+      right: 0;
+
+      width: 78%;
+      height: 1px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(99,145,220,0.28),
+        transparent
+      );
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section.content-section {
+      padding: 100px 0;
+    }
+
+    .section-container {
+      width: min(1180px, calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+
+      font-size: 12px;
+      font-weight: 750;
+
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      max-width: 720px;
+
+      color: var(--navy);
+
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.05;
+
+      letter-spacing: -0.035em;
+
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      max-width: 650px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       SERVICES
+    ========================== */
+
+    .services {
+      background: var(--soft-bg);
+    }
+
+    .service-grid {
+      margin-top: 55px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 22px;
+    }
+
+    .service-card {
+      padding: 32px;
+
+      background: white;
+      border: 1px solid #e8edf4;
+
+      border-radius: 14px;
+
+      transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+
+      border-color: rgba(18,101,237,0.2);
+
+      box-shadow: 0 20px 45px rgba(6,26,51,0.07);
+    }
+
+    .service-number {
+      color: var(--blue);
+
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .process-grid {
+      margin-top: 55px;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 28px;
+    }
+
+    .process-step {
+      position: relative;
+      padding-top: 20px;
+    }
+
+    .process-icon {
+      width: 52px;
+      height: 52px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 20px;
+
+      border-radius: 50%;
+
+      background: rgba(18,101,237,0.08);
+      color: var(--blue);
+
+      font-size: 21px;
+      font-weight: 750;
+    }
+
+    .process-step h3 {
+      margin-bottom: 10px;
+
+      color: var(--navy);
+
+      font-size: 18px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       CTA SECTION
+    ========================== */
+
+    .final-cta {
+      padding: 110px 0;
+
+      background:
+        radial-gradient(
+          circle at 75% 30%,
+          rgba(18,101,237,0.16),
+          transparent 30%
+        ),
+        var(--navy);
+
+      color: white;
+    }
+
+    .final-cta .section-container {
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      max-width: 700px;
+      margin: 0 auto 20px;
+
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1;
+
+      letter-spacing: -0.04em;
+    }
+
+    .final-cta p {
+      max-width: 560px;
+      margin: 0 auto 32px;
+
+      color: rgba(255,255,255,0.72);
+
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 35px 0;
+
+      border-top: 1px solid #edf0f4;
+
+      background: white;
+    }
+
+    .footer-container {
+      width: min(1180px, calc(100% - 64px));
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: #6d7783;
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        padding: 70px 0 55px;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+      }
+
+      .visual {
+        min-height: 390px;
+      }
+
+      .chart {
+        max-width: 660px;
+        height: 390px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-container,
+      .hero-container,
+      .section-container,
+      .footer-container {
+        width: calc(100% - 36px);
+      }
+
+      .site-header {
+        height: 74px;
+      }
+
+      .brand {
+        min-width: 210px;
+      }
+
+      .brand-logo-wrap {
+        width: 52px;
+        height: 52px;
+      }
+
+      .brand-logo-wrap img {
+        width: 122px;
+        height: 122px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-corp {
+        font-size: 7.5px;
+      }
+
+      .mobile-nav {
+        top: 74px;
+      }
+
+      .hero-container {
+        padding-top: 55px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .primary-button,
+      .secondary-button {
+        width: 100%;
+      }
+
+      .visual {
+        min-height: 310px;
+      }
+
+      .chart {
+        height: 310px;
+        padding-bottom: 40px;
+      }
+
+      .bars {
+        gap: 8px;
+        width: 80%;
+      }
+
+      .chart-base {
+        bottom: 37px;
+      }
+
+      section.content-section {
+        padding: 75px 0;
+      }
+
+      .service-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <div class="nav-container">
+
+      <a href="#home" class="brand">
+
+        <div class="brand-logo-wrap">
+          <img
+            src="revora-logo.png"
+            alt="REVORA Marketing Corp."
+          />
+        </div>
+
+        <div class="brand-text">
+          <span class="brand-name">REVORA</span>
+          <span class="brand-corp">Marketing Corp.</span>
+        </div>
+
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Our Process</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Strategy Call</a>
+      </nav>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation"
+      >
+        ☰
+      </button>
+
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Our Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-container">
+
+        <div class="hero-copy">
+
+          <span class="eyebrow">
+            REVORA MARKETING CORP.
+          </span>
+
+          <h1>
+            Turn Marketing<br>
+            Into <span class="blue">Revenue.</span>
+          </h1>
+
+          <p class="hero-description">
+            We build focused marketing strategies designed to generate
+            attention, leads, customers, and measurable business growth.
+          </p>
+
+          <div class="cta-row">
+
+            <a href="#contact" class="primary-button">
+              Book a Strategy Call
+            </a>
+
+            <a href="#services" class="secondary-button">
+              Explore Services
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="visual">
+
+          <div class="chart">
+
+            <div class="bars">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+
+            <div class="chart-base"></div>
+
+            <svg
+              class="curve"
+              viewBox="0 0 620 480"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+
+              <defs>
+
+                <linearGradient
+                  id="lineGradient"
+                  x1="0"
+                  y1="1"
+                  x2="1"
+                  y2="0"
+                >
+                  <stop offset="0%" stop-color="#9fc5ff" />
+                  <stop offset="100%" stop-color="#1265ed" />
+                </linearGradient>
+
+                <marker
+                  id="arrowHead"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="8"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path
+                    d="M0,0 L10,5 L0,10 Z"
+                    fill="#1265ed"
+                  />
+                </marker>
+
+              </defs>
+
+              <path
+                class="curve-path"
+                marker-end="url(#arrowHead)"
+                d="
+                  M105 325
+                  C175 316,
+                  240 290,
+                  300 248
+                  C360 205,
+                  420 142,
+                  478 58
+                "
+              />
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="content-section" id="about">
+
+      <div class="section-container">
+
+        <div class="section-kicker">
+          About REVORA
+        </div>
+
+        <h2 class="section-title">
+          Marketing should create business growth, not just attention.
+        </h2>
+
+        <p class="section-description">
+          REVORA Marketing Corp. focuses on the connection between marketing
+          and revenue. We create practical, measurable campaigns designed to
+          increase visibility, generate qualified leads, and turn those leads
+          into paying customers.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="content-section services" id="services">
+
+      <div class="section-container">
+
+        <div class="section-kicker">
+          Services
+        </div>
+
+        <h2 class="section-title">
+          Everything needed to build demand and drive revenue.
+        </h2>
+
+        <p class="section-description">
+          Clear strategy, consistent execution, and measurable performance.
+        </p>
+
+
+        <div class="service-grid">
+
+          <article class="service-card">
+
+            <div class="service-number">01</div>
+
+            <h3>Marketing Strategy</h3>
+
+            <p>
+              Clear positioning, offers, targeting, and campaign planning
+              built around your business goals.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">02</div>
+
+            <h3>Paid Advertising</h3>
+
+            <p>
+              Performance-focused campaigns designed to generate leads,
+              bookings, customers, and measurable returns.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">03</div>
+
+            <h3>Social Media</h3>
+
+            <p>
+              Content and social strategy that builds awareness, credibility,
+              and consistent customer attention.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">04</div>
+
+            <h3>Content Creation</h3>
+
+            <p>
+              Marketing content designed to communicate value clearly and
+              move potential customers toward action.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">05</div>
+
+            <h3>Lead Generation</h3>
+
+            <p>
+              Conversion-focused funnels and campaigns that help turn
+              marketing traffic into real business opportunities.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">06</div>
+
+            <h3>Growth Optimization</h3>
+
+            <p>
+              Continuous testing, reporting, and improvement focused on
+              stronger marketing performance over time.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section class="content-section" id="process">
+
+      <div class="section-container">
+
+        <div class="section-kicker">
+          Our Process
+        </div>
+
+        <h2 class="section-title">
+          Simple strategy. Consistent execution. Measurable growth.
+        </h2>
+
+
+        <div class="process-grid">
+
+          <div class="process-step">
+
+            <div class="process-icon">1</div>
+
+            <h3>Discover</h3>
+
+            <p>
+              We understand your business, customers, market, and current
+              challenges.
+            </p>
+
+          </div>
+
+
+          <div class="process-step">
+
+            <div class="process-icon">2</div>
+
+            <h3>Strategize</h3>
+
+            <p>
+              We create a focused marketing plan built around measurable
+              business objectives.
+            </p>
+
+          </div>
+
+
+          <div class="process-step">
+
+            <div class="process-icon">3</div>
+
+            <h3>Execute</h3>
+
+            <p>
+              We launch campaigns and content designed to attract, engage,
+              and convert.
+            </p>
+
+          </div>
+
+
+          <div class="process-step">
+
+            <div class="process-icon">4</div>
+
+            <h3>Grow</h3>
+
+            <p>
+              We measure performance, optimize what works, and continuously
+              improve results.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="final-cta" id="contact">
+
+      <div class="section-container">
+
+        <h2>
+          Ready to turn marketing into revenue?
+        </h2>
+
+        <p>
+          Tell us where your business is today and where you want it to go.
+          We'll help build the marketing strategy to get you there.
+        </p>
+
+        <a href="mailto:hello@revora.ca" class="primary-button">
+          Book a Strategy Call
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        REVORA MARKETING CORP.
+      </div>
+
+      <div>
+        © <span id="year"></span> REVORA Marketing Corp. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuButton.addEventListener("click", function () {
+
+      mobileNav.classList.toggle("open");
+
+      menuButton.textContent =
+        mobileNav.classList.contains("open")
+          ? "✕"
+          : "☰";
+
+    });
+
+
+    document
+      .querySelectorAll(".mobile-nav a")
+      .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          mobileNav.classList.remove("open");
+          menuButton.textContent = "☰";
+
+        });
+
+      });
+
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* Very subtle chart movement */
+
+    const visual =
+      document.querySelector(".visual");
+
+    document.addEventListener("mousemove", function(event) {
+
+      if (window.innerWidth < 950) return;
+
+      const x =
+        (event.clientX / window.innerWidth - 0.5) * 4;
+
+      const y =
+        (event.clientY / window.innerHeight - 0.5) * 4;
+
+      visual.style.marginLeft = x + "px";
+      visual.style.marginTop = y + "px";
+
+    });
+
+  </script>
+
+</body>
+</html>
